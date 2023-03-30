@@ -1,11 +1,26 @@
 .header {
 	&__container {
+		min-height: 70px;
 		display: flex;
-		align-items: center;
+		border-bottom: 1px solid var(--black-color);
+		&-title {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: 100%;
+			max-width: 215px;
+			&:first-of-type {
+				max-width: 230px;
+			}
+		}
 	}
 	&__logo {
 		box-sizing: content-box;
 		padding: 11px 7px;
+		min-width: 70px;
 		margin-right: 16px;
+	}
+	&__picture {
+		display: flex;
 	}
 }
