@@ -19,6 +19,7 @@
 		position: relative;
 		min-height: 150px;
 		grid-column: 4 span;
+		padding-right: 16px;
 		&::before {
 			content: "";
 			height: 1px;
