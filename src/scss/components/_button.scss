@@ -9,7 +9,7 @@
 	font-size: 16px;
 	line-height: 24px;
 	color: var(--white-color);
-	transition: background 0.5s ease;
+	transition: background 0.5s ease-in-out, color 0.5s ease-in-out, border 0.5s ease;
 	&__primary {
 		background: var(--1-blue-color);
 		&:hover {
@@ -17,6 +17,37 @@
 		}
 		&-active {
 			background: var(--black-color);
+		}
+		&-disabled {
+			background: var(--1-grey-color);
+		}
+		&-dark {
+			background: var(--black-color);
+			&:hover {
+				background: var(--1-blue-color);
+			}
+			&-active {
+				background: var(--3-blue-color);
+			}
+		}
+	}
+	&__secondary {
+		background: var(--white-color);
+		color: var(--black-color);
+		border: 1px solid var(--black-color);
+		box-shadow: 0px 25px 25px -10px rgba(161, 166, 175, 0.3);
+		&:hover {
+			color: white;
+			background: var(--1-blue-color);
+			border-color: transparent;
+		}
+		&-active {
+			color: white;
+			background: var(--1-blue-color);
+		}
+		&-disabled {
+			background: var(--1-grey-color);
+			border: 1px solid var(--1-grey-color);
 		}
 	}
 }
