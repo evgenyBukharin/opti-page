@@ -11,6 +11,7 @@
 			max-width: 215px;
 			&:first-of-type {
 				max-width: 230px;
+				border-right: 1px solid var(--black-color);
 			}
 		}
 	}

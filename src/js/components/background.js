@@ -1,5 +1,5 @@
 VANTA.GLOBE({
-	el: "#hero",
+	el: ".hero",
 	mouseControls: true,
 	touchControls: true,
 	gyroControls: false,

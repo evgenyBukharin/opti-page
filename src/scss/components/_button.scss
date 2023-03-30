@@ -1,0 +1,22 @@
+.button {
+	min-width: 200px;
+	min-height: 60px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-family: "Inter";
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 24px;
+	color: var(--white-color);
+	transition: background 0.5s ease;
+	&__primary {
+		background: var(--1-blue-color);
+		&:hover {
+			background: var(--black-color);
+		}
+		&-active {
+			background: var(--black-color);
+		}
+	}
+}
