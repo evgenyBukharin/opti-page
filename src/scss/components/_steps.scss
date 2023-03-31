@@ -1,6 +1,7 @@
 .steps {
 	margin-top: 100px;
 	padding-bottom: 100px;
+	counter-reset: numbers;
 	&__accordion {
 		width: 100%;
 		padding: 24px 0;
@@ -26,12 +27,25 @@
 		}
 	}
 	&__title {
+		position: relative;
 		transition: color 0.5s ease;
 		-webkit-text-stroke-width: 1px;
 		-webkit-text-stroke-color: var(--1-grey-color);
 		color: transparent;
+		counter-increment: numbers;
+		width: 100%;
+		padding-right: 170px;
+		&::after {
+			content: "0" counter(numbers);
+			position: absolute;
+			right: 0;
+			top: 50%;
+			transform: translateY(-50%);
+		}
 		&-main {
 			margin-bottom: 24px;
+		}
+		&-inner {
 		}
 	}
 	&__control {
@@ -48,9 +62,5 @@
 		padding-top: 0;
 		will-change: max-height;
 		transition: all 0.5s ease-out 0.1s;
-		// &-open {
-		// 	opacity: 1;
-		// 	padding-top: 16px;
-		// }
 	}
 }
