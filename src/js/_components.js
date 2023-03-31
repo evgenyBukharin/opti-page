@@ -1,2 +1,3 @@
 import "./components/vanta.globe.min.js";
-import "./components/background";
+import "./components/moreBtn";
+import "./components/accordion-steps";

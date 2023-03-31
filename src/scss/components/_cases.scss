@@ -23,11 +23,11 @@
 		display: flex;
 		flex-direction: column;
 		row-gap: 16px;
-		& .line-horizontal-bottom {
+		& .line-horizontal-top {
 			display: none;
 		}
-		&:nth-last-child(-n + 4) {
-			& .line-horizontal-bottom {
+		&:nth-child(-n + 4) {
+			& .line-horizontal-top {
 				display: unset;
 			}
 		}
@@ -61,6 +61,9 @@
 			opacity: 0;
 			visibility: hidden;
 			transition: opacity 0.5s ease-in, visibility 0.5s ease-in;
+		}
+		&-hidden {
+			display: none;
 		}
 	}
 	&__tags {
