@@ -2,13 +2,20 @@
 	margin-top: 100px;
 	padding-bottom: 100px;
 	counter-reset: numbers;
+	& .line {
+		&-horizontal {
+			&-top {
+				top: 0;
+			}
+			&-bottom {
+				bottom: 0;
+			}
+		}
+	}
 	&__accordion {
+		position: relative;
 		width: 100%;
 		padding: 24px 0;
-		border-bottom: 1px solid var(--black-color);
-		&:first-child {
-			border-top: 1px solid var(--black-color);
-		}
 		&:hover {
 			& .steps__title {
 				-webkit-text-stroke-color: var(--black-color);
@@ -35,6 +42,7 @@
 		counter-increment: numbers;
 		width: 100%;
 		padding-right: 170px;
+		font-weight: 500;
 		&::after {
 			content: "0" counter(numbers);
 			position: absolute;
