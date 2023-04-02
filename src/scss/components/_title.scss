@@ -55,5 +55,8 @@
 		line-height: 22px;
 		color: var(--black-color);
 		margin: 0;
+		&-grey {
+			color: var(--1-grey-color);
+		}
 	}
 }
