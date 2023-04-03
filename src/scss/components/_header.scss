@@ -1,4 +1,7 @@
 .header {
+	position: relative;
+	z-index: 100;
+	background: var(--white-color);
 	&__container {
 		min-height: 70px;
 		display: flex;

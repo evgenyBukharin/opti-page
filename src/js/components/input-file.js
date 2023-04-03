@@ -1,51 +1,54 @@
-const dt = new DataTransfer();
-const fileInput = document.querySelector(".feedback__input-file");
-let filesList = document.querySelector(".feedback__list-file");
-
-fileInput.addEventListener("change", () => {
-	// очистка списка файлов нужна/нет?
-	// filesList.innerHTML = "";
-
-	for (let i = 0; i < fileInput.files.length; i++) {
-		let newFileBlock = `<div class="feedback__item-file">
-								<div class="feedback__container-doc">
-									<img
-										loading="lazy"
-										src="./img/doc.svg"
-										class="image feedback__icon-doc"
-										width="44"
-										height="44"
-										alt="Иконка документ"
-									/>
-									<div class="feedback__container-text">
-										<span class="title__h6">${fileInput.files.item(i).name}</span>
-										<span class="title__h6 title__h6-grey">${bytesToSize(fileInput.files.item(i).size)}</span>
+const fileInputContainers = document.querySelectorAll(".file-input__container");
+fileInputContainers.forEach((container) => {
+	const sectionClass = container.closest("section").classList[0];
+	dt = new DataTransfer();
+	const fileInput = container.querySelector(`.${sectionClass}__input-file`);
+	let filesList = container.querySelector(`.${sectionClass}__list-file`);
+	fileInput.addEventListener("change", () => {
+		// очистка списка файлов нужна/нет?
+		// filesList.innerHTML = "";
+		console.log(filesList);
+		for (let i = 0; i < fileInput.files.length; i++) {
+			let newFileBlock = `<div class="${sectionClass}__item-file">
+									<div class="${sectionClass}__container-doc">
+										<img
+											loading="lazy"
+											src="./img/doc.svg"
+											class="image ${sectionClass}__icon-doc"
+											width="44"
+											height="44"
+											alt="Иконка документ"
+										/>
+										<div class="${sectionClass}__container-text">
+											<span class="title__h6">${fileInput.files.item(i).name}</span>
+											<span class="title__h6 title__h6-grey">${bytesToSize(fileInput.files.item(i).size)}</span>
+										</div>
 									</div>
-								</div>
-								<span class="feedback__button-remove">
-									<img
-										loading="lazy"
-										src="./img/close.svg"
-										class="image feedback__icon-close"
-										width="12"
-										height="12"
-										alt="Иконка закрыть"
-									/>
-								</span>
-							</div>`;
-		filesList.insertAdjacentHTML("beforeend", newFileBlock);
-		dt.items.add(fileInput.files.item(i));
-	}
-	let removeButtons = document.querySelectorAll(".feedback__button-remove");
-	removeButtons.forEach((button) => {
-		button.addEventListener("click", () => {
-			removeFilesItem(button);
+									<span class="${sectionClass}__button-remove">
+										<img
+											loading="lazy"
+											src="./img/close.svg"
+											class="image ${sectionClass}__icon-close"
+											width="12"
+											height="12"
+											alt="Иконка закрыть"
+										/>
+									</span>
+								</div>`;
+			filesList.insertAdjacentHTML("beforeend", newFileBlock);
+			dt.items.add(fileInput.files.item(i));
+		}
+		let removeButtons = container.querySelectorAll(`.${sectionClass}__button-remove`);
+		removeButtons.forEach((button) => {
+			button.addEventListener("click", () => {
+				removeFilesItem(button, fileInput, dt);
+			});
 		});
+		fileInput.files = dt.files;
 	});
-	fileInput.files = dt.files;
 });
 
-function removeFilesItem(target) {
+function removeFilesItem(target, fileInput, dt) {
 	let name = target.previousElementSibling.innerHTML;
 	target.parentNode.remove();
 	for (let i = 0; i < dt.items.length; i++) {
