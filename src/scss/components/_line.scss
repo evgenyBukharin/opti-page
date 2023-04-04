@@ -30,4 +30,20 @@
 			left: -16px;
 		}
 	}
+	&-hidden {
+		display: none;
+	}
+}
+
+@media (max-width: 768px) {
+	.line {
+		&-vertical {
+			&-right {
+				right: -8px;
+			}
+			&-left {
+				left: -8px;
+			}
+		}
+	}
 }

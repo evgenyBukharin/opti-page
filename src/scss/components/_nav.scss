@@ -1,11 +1,9 @@
 .nav {
+	position: relative;
+	grid-column: 7 span;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	border-right: 1px solid var(--black-color);
-	border-left: 1px solid var(--black-color);
-	max-width: 803px;
-	width: 100%;
 	&__list {
 		display: flex;
 	}
@@ -18,5 +16,42 @@
 		&-logo {
 			display: block;
 		}
+	}
+}
+
+@media (max-width: 1024px) {
+	.nav {
+		grid-column: 6 span;
+	}
+}
+
+@media (max-width: 768px) {
+	.nav {
+		grid-column: 5 span;
+		&__item {
+			&:not(:last-child) {
+				margin-right: 16px;
+			}
+		}
+	}
+}
+
+@media (max-width: 616px) {
+	.nav {
+		grid-column: 10 span;
+		&__item {
+			&:not(:last-child) {
+				margin-right: 16px;
+			}
+		}
+		& .line-vertical-right {
+			display: none;
+		}
+	}
+}
+
+@media (max-width: 375px) {
+	.nav {
+		display: none;
 	}
 }

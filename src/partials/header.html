@@ -1,19 +1,23 @@
 <header class="header fixed-block">
 	<div class="container">
 		<div class="header__container">
-			<a href="./" class="header__link-logo">
-				<picture>
-					<source srcset="./img/logo.webp" type="image/webp" />
-					<img
-						loading="lazy"
-						src="./img/logo.png"
-						class="image header__logo"
-						width="70"
-						height="49"
-						alt="Логотип"
-					/>
-				</picture>
-			</a>
+			<span class="line line-horizontal-bottom line-horizontal-bottom-hidden"></span>
+			<div class="header__container-logo">
+				<a href="./" class="header__link-logo">
+					<picture class="header__picture">
+						<source srcset="./img/logo.webp" type="image/webp" />
+						<img
+							loading="lazy"
+							src="./img/logo.png"
+							class="image header__logo"
+							width="70"
+							height="49"
+							alt="Логотип"
+						/>
+					</picture>
+				</a>
+				<span class="line line-vertical-right"></span>
+			</div>
 			<nav class="nav" title="Навигационная панель">
 				<ul class="nav__list list-reset">
 					<li class="nav__item">
@@ -26,16 +30,24 @@
 						<a href="#" class="nav__link title__h6">Контакты</a>
 					</li>
 				</ul>
+				<span class="line line-vertical-right"></span>
 			</nav>
-			<div class="header__container-title">
+			<div class="header__container-title header__email">
 				<h6 class="title__h6">
 					<a class="header__link" href="mailto:v@opti.ooo">v@opti.ooo</a>
 				</h6>
+				<span class="line line-vertical-right"></span>
 			</div>
 			<div class="header__container-title">
 				<h6 class="title__h6">
 					<a class="header__link" href="tel:83512258005">8 (351) 225-80-05</a>
 				</h6>
+			</div>
+			<div class="header__container-burger">
+				<span class="line line-vertical-left"></span>
+				<button class="burger" aria-label="Открыть меню" aria-expanded="false" data-burger>
+					<span class="burger__line"></span>
+				</button>
 			</div>
 		</div>
 	</div>
