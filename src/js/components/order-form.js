@@ -41,6 +41,7 @@ if (closeBtn !== null) {
 if (orderSection !== null) {
 	orderSection.addEventListener("click", () => {
 		orderSection.classList.toggle("order-active");
+		orderOverlay.classList.remove("order__overlay-active");
 		enableScroll();
 		headerScrollDisable();
 	});
