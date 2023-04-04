@@ -34,6 +34,11 @@
 			& .faq__icon {
 				fill: var(--black-color);
 			}
+			& .faq__title {
+				&-number {
+					transform: translateY(-8px);
+				}
+			}
 		}
 		&:hover {
 			& .faq__icon {
@@ -51,11 +56,8 @@
 			margin-bottom: 24px;
 		}
 		&-inner {
-			padding-top: 4px;
-			padding-bottom: 4px;
 			position: relative;
 			display: block;
-			padding-left: 15px;
 			width: 100%;
 		}
 		&-number {
@@ -64,8 +66,9 @@
 			font-family: "Mulish", sans-serif;
 			font-size: 24px;
 			line-height: 32px;
-			font-weight: 600px;
+			font-weight: 600;
 			align-self: flex-start;
+			transition: transform 0.5s ease-out;
 		}
 	}
 	&__control {
@@ -74,7 +77,8 @@
 		flex-direction: column;
 		cursor: pointer;
 		width: 100%;
-		padding-right: 10px;
+		padding-left: 15px;
+		padding-right: 15px;
 	}
 	&__content {
 		box-sizing: content-box;
@@ -84,7 +88,6 @@
 		will-change: max-height;
 		transition: all 0.5s ease-out 0.1s;
 		padding-top: 0;
-		padding-left: 15px;
 	}
 	&__icon {
 		box-sizing: content-box;
@@ -99,7 +102,37 @@
 	}
 }
 
+@media (max-width: 1024px) {
+	.faq {
+		&__title {
+			&-number {
+				margin-right: 12px;
+			}
+		}
+		&__control {
+			padding-left: 11px;
+		}
+	}
+}
+
 @media (max-width: 768px) {
 	.faq {
+		&__title {
+			&-number {
+				margin-right: 8px;
+			}
+		}
+		&__control {
+			padding-left: 7px;
+		}
+	}
+}
+
+@media (max-width: 375px) {
+	.faq {
+		&__title {
+			&-number {
+			}
+		}
 	}
 }
