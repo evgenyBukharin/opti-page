@@ -1,5 +1,5 @@
 .hero {
-	padding-bottom: 100px;
+	box-sizing: border-box;
 	&__container {
 		position: relative;
 		padding-top: 121px;
@@ -20,6 +20,58 @@
 	}
 	&__text {
 		margin-bottom: 24px;
-		max-width: 519px;
+		max-width: 548px;
+	}
+}
+
+@media (max-width: 1024px) {
+	.hero {
+		&__container {
+			padding-top: 120px;
+			padding-bottom: 100px;
+		}
+		&__title {
+			font-size: 70px;
+			line-height: 70px;
+		}
+	}
+}
+
+@media (max-width: 768px) {
+	.hero {
+		&__container {
+			padding-bottom: 120px;
+		}
+		&__title {
+			font-size: 50px;
+			line-height: 50px;
+		}
+	}
+}
+
+@media (max-width: 375px) {
+	.hero {
+		&__container {
+			padding-bottom: 120px;
+		}
+		&__title {
+			font-size: 50px;
+			line-height: 50px;
+		}
+		& .vanta-canvas {
+			padding-top: 135px;
+		}
+	}
+}
+
+@media (max-width: 320px) {
+	.hero {
+		&__container {
+			padding-top: 70px;
+		}
+		&__title {
+			font-size: 40px;
+			line-height: 40px;
+		}
 	}
 }

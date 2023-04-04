@@ -1,10 +1,10 @@
 VANTA.GLOBE({
-	el: ".hero__container",
+	el: ".hero",
 	mouseControls: true,
 	touchControls: true,
 	gyroControls: false,
-	minHeight: 636.0,
-	minWidth: 1440.0,
+	minHeight: 445,
+	minWidth: 750,
 	scale: 1.0,
 	scaleMobile: 1.0,
 	color: 0xd88d9,
