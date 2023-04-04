@@ -60,3 +60,21 @@
 		}
 	}
 }
+
+@media (max-width: 1024px) {
+	.title {
+		&__bigtext {
+			font-size: 70px;
+			line-height: 70px;
+		}
+	}
+}
+
+@media (max-width: 768px) {
+	.title {
+		&__bigtext {
+			font-size: 50px;
+			line-height: 50px;
+		}
+	}
+}

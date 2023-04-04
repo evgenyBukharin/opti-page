@@ -70,28 +70,6 @@
 	}
 }
 
-@media (max-width: 1024px) {
-	.steps {
-		&__title {
-			&-main {
-				font-size: 70px;
-				line-height: 70px;
-			}
-		}
-	}
-}
-
-@media (max-width: 768px) {
-	.steps {
-		&__title {
-			&-main {
-				font-size: 50px;
-				line-height: 50px;
-			}
-		}
-	}
-}
-
 @media (max-width: 375px) {
 	.steps {
 		&__title {

@@ -84,10 +84,6 @@
 
 @media (max-width: 1024px) {
 	.cases {
-		&__title {
-			font-size: 70px;
-			line-height: 70px;
-		}
 		&__list {
 			gap: 24px;
 		}
@@ -142,10 +138,6 @@
 	.cases {
 		margin-top: 60px;
 		padding-bottom: 60px;
-		&__title {
-			font-size: 50px;
-			line-height: 50px;
-		}
 		&__list {
 			gap: 16px;
 		}

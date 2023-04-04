@@ -33,15 +33,6 @@
 	}
 }
 
-@media (max-width: 1024px) {
-	.cool {
-		&__title {
-			font-size: 70px;
-			line-height: 70px;
-		}
-	}
-}
-
 @media (max-width: 768px) {
 	.cool {
 		margin-top: 60px;
@@ -74,8 +65,6 @@
 		}
 		&__title {
 			max-width: 340px;
-			font-size: 50px;
-			line-height: 50px;
 			margin-bottom: 16px;
 		}
 	}
