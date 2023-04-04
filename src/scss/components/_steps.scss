@@ -91,3 +91,21 @@
 		}
 	}
 }
+
+@media (max-width: 375px) {
+	.steps {
+		&__title {
+			padding-right: 0;
+			&-main {
+				font-size: 50px;
+				line-height: 50px;
+			}
+			&-inner {
+				font-size: 36px;
+			}
+			&::after {
+				display: none;
+			}
+		}
+	}
+}
