@@ -41,19 +41,16 @@
 		color: transparent;
 		counter-increment: numbers;
 		width: 100%;
-		padding-right: 170px;
+		padding-right: 80px;
 		font-weight: 500;
 		&::after {
 			content: "0" counter(numbers);
 			position: absolute;
 			right: 0;
-			top: 50%;
-			transform: translateY(-50%);
+			top: 0;
 		}
 		&-main {
 			margin-bottom: 24px;
-		}
-		&-inner {
 		}
 	}
 	&__control {
@@ -70,5 +67,27 @@
 		padding-top: 0;
 		will-change: max-height;
 		transition: all 0.5s ease-out 0.1s;
+	}
+}
+
+@media (max-width: 1024px) {
+	.steps {
+		&__title {
+			&-main {
+				font-size: 70px;
+				line-height: 70px;
+			}
+		}
+	}
+}
+
+@media (max-width: 768px) {
+	.steps {
+		&__title {
+			&-main {
+				font-size: 50px;
+				line-height: 50px;
+			}
+		}
 	}
 }
