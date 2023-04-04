@@ -1,20 +1,24 @@
 <footer class="footer">
 	<div class="container">
 		<div class="footer__container">
-			<span class="line line-horizontal-top footer__line-horizontal-top"></span>
-			<a href="./" class="footer__link-logo">
-				<picture>
-					<source srcset="./img/logo.webp" type="image/webp" />
-					<img
-						loading="lazy"
-						src="./img/logo.png"
-						class="image footer__logo"
-						width="70"
-						height="49"
-						alt="Логотип"
-					/>
-				</picture>
-			</a>
+			<span class="line line-horizontal-top"></span>
+			<span class="line line-horizontal-bottom line-horizontal-bottom-hidden"></span>
+			<div class="footer__container-logo">
+				<a href="./" class="footer__link-logo">
+					<picture class="footer__picture">
+						<source srcset="./img/logo.webp" type="image/webp" />
+						<img
+							loading="lazy"
+							src="./img/logo.png"
+							class="image footer__logo"
+							width="70"
+							height="49"
+							alt="Логотип"
+						/>
+					</picture>
+				</a>
+				<span class="line line-vertical-right"></span>
+			</div>
 			<nav class="nav" title="Навигационная панель">
 				<ul class="nav__list list-reset">
 					<li class="nav__item">
@@ -27,11 +31,13 @@
 						<a href="#" class="nav__link title__h6">Контакты</a>
 					</li>
 				</ul>
+				<span class="line line-vertical-right"></span>
 			</nav>
-			<div class="footer__container-title">
+			<div class="footer__container-title footer__email">
 				<h6 class="title__h6">
 					<a class="footer__link" href="mailto:v@opti.ooo">v@opti.ooo</a>
 				</h6>
+				<span class="line line-vertical-right"></span>
 			</div>
 			<div class="footer__container-title">
 				<h6 class="title__h6">
