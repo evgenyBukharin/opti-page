@@ -70,6 +70,12 @@
 	}
 }
 
+@media (max-width: 768px) {
+	.steps {
+		padding-bottom: 60px;
+	}
+}
+
 @media (max-width: 375px) {
 	.steps {
 		&__title {
