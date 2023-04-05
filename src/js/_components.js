@@ -1,3 +1,4 @@
+import "./components/animation";
 import "./components/vanta.globe.min.js";
 import "./components/background";
 import "./components/moreBtn";

@@ -4,6 +4,7 @@
 		position: relative;
 		padding-top: 121px;
 		padding-bottom: 150px;
+		opacity: 0;
 		&::after {
 			content: "";
 			width: 100%;
@@ -16,7 +17,9 @@
 	}
 	&__title {
 		margin-bottom: 21px;
-		max-width: 1074px;
+		overflow: hidden;
+		max-width: 1090px;
+		opacity: 0;
 	}
 	&__text {
 		margin-bottom: 24px;
