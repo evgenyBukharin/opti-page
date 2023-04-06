@@ -36,6 +36,9 @@
 		margin-bottom: 24px;
 		padding-left: 24px;
 	}
+	&__button {
+		box-shadow: none;
+	}
 }
 
 @media (max-width: 768px) {

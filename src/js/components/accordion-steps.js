@@ -1,7 +1,5 @@
 const accordionSteps = document.querySelectorAll(".steps__accordion");
-setTimeout(() => {
-	accordionSteps[0].click();
-}, 0);
+
 let prevElem = null;
 accordionSteps.forEach((el) => {
 	el.addEventListener("click", (e) => {

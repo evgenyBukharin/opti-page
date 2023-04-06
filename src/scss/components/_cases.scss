@@ -17,7 +17,6 @@
 			overflow: hidden;
 			& .letter {
 				opacity: 0;
-				transform: translateY(50px);
 			}
 		}
 	}
@@ -28,6 +27,7 @@
 		gap: 32px;
 	}
 	&__item {
+		pointer-events: none;
 		position: relative;
 		grid-column: 3 span;
 		display: flex;

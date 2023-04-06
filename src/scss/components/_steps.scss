@@ -43,14 +43,22 @@
 		width: 100%;
 		padding-right: 80px;
 		font-weight: 500;
+		&-after-visible {
+			&::after {
+				opacity: 1 !important;
+			}
+		}
 		&::after {
 			content: "0" counter(numbers);
 			position: absolute;
 			right: 0;
 			top: 0;
+			transition: opacity 1s ease-in 1s;
+			opacity: 0;
 		}
 		&-main {
 			margin-bottom: 24px;
+			overflow: hidden;
 		}
 	}
 	&__control {
