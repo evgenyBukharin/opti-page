@@ -1,12 +1,24 @@
 .cases {
 	margin-top: 100px;
 	padding-bottom: 100px;
+	&__container {
+		&-image {
+			width: 100%;
+			overflow-y: hidden;
+		}
+	}
 	&__title {
 		margin-bottom: 24px;
+		overflow: hidden;
 		&-article {
 			margin-top: 8px;
 			color: inherit;
 			transition: color 0.5s ease;
+			overflow: hidden;
+			& .letter {
+				opacity: 0;
+				transform: translateY(50px);
+			}
 		}
 	}
 	&__list {
@@ -188,6 +200,7 @@
 		}
 		&__image {
 			width: 100%;
+			overflow: hidden;
 		}
 	}
 }
