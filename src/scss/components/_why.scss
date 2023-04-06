@@ -2,7 +2,7 @@
 	margin-top: 230px;
 	padding-bottom: 100px;
 	&__title {
-		padding-bottom: 41px;
+		margin-bottom: 41px;
 		text-transform: uppercase;
 		overflow: hidden;
 	}
@@ -11,7 +11,7 @@
 		overflow: hidden;
 	}
 	&__text {
-		overflow: hidden;
+		height: fit-content;
 	}
 	&__list {
 		display: grid;
@@ -110,5 +110,9 @@
 		&__subtitle {
 			margin-bottom: 16px;
 		}
+	}
+
+	.letter {
+		transform: translate(0, 200px);
 	}
 }
