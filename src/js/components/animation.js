@@ -4,7 +4,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 // функция разделения текста на буквы и слова
 function splitText(el) {
-	el.innerHTML = el.innerHTML.replace(/(\S*)/g, (m) => {
+	el.innerHTML = el.innerText.replace(/(\S*)/g, (m) => {
 		return (
 			`<div style="display: inline-block" class="word">` +
 			m.replace(/(-|#|@)?\S(-|#|@)?/g, "<div style='display: inline-block' class='letter'>$&</div>") +
@@ -20,6 +20,7 @@ function splitText(el) {
 	return el;
 }
 
+// таймлайн первой секции
 if (document.querySelector(".hero") !== null) {
 	const heroTl = gsap.timeline({});
 	const heroContainer = document.querySelector(".hero__container");
@@ -40,12 +41,12 @@ if (document.querySelector(".hero") !== null) {
 			},
 			{
 				opacity: 1,
-				duration: 2 / heroSplitArray.length,
+				duration: 1 / heroSplitArray.length,
 			}
 		);
 	});
-	heroTl.fromTo(".hero__text", { opacity: 0 }, { opacity: 1, duration: 0.5 }, "+=0.2");
-	heroTl.fromTo(".hero__button", { opacity: 0 }, { opacity: 1, duration: 0.5 }, "+=0.2");
+	heroTl.fromTo(".hero__text", { opacity: 0 }, { opacity: 1, duration: 0.5 }, "-=0.5");
+	heroTl.fromTo(".hero__button", { opacity: 0 }, { opacity: 1, duration: 0.5 }, "-=0.3");
 }
 
 // таймлайн второй секции
@@ -85,7 +86,7 @@ if (document.querySelector(".why") !== null) {
 			height: 0,
 		},
 		{ height: "100%", duration: 0.3 },
-		"-=0.5"
+		"-=0.3"
 	);
 	whySplitArray = Array.from(
 		splitText(document.querySelector(".why__item-1 .why__subtitle")).querySelectorAll(".letter")
@@ -113,7 +114,7 @@ if (document.querySelector(".why") !== null) {
 			},
 			{
 				opacity: 1,
-				duration: 1 / whySplitArray.length,
+				duration: 0.7 / whySplitArray.length,
 			}
 		);
 	});
@@ -124,21 +125,25 @@ if (document.querySelector(".why") !== null) {
 		{
 			width: 0,
 		},
-		{ width: "100%", duration: 0.5 }
+		{ width: "100%", duration: 0.3 },
+		"-=0.5"
 	);
 	whyTl.fromTo(
 		".why__item-2 .line-vertical-right",
 		{
 			height: 0,
 		},
-		{ height: "100%", duration: 0.5 },
+		{ height: "100%", duration: 0.3 },
 		"-=0.5"
 	);
 	whySplitArray = Array.from(
 		splitText(document.querySelector(".why__item-2 .why__subtitle")).querySelectorAll(".letter")
 	);
+	let itemTitleTl = gsap.timeline({
+		delay: -0.3,
+	});
 	whySplitArray.forEach((el) => {
-		whyTl.fromTo(
+		itemTitleTl.fromTo(
 			el,
 			{
 				opacity: 0,
@@ -149,21 +154,26 @@ if (document.querySelector(".why") !== null) {
 			}
 		);
 	});
+	whyTl.add(itemTitleTl);
 	whySplitArray = Array.from(
 		splitText(document.querySelector(".why__item-2 .why__text")).querySelectorAll(".letter")
 	);
+	itemTitleTl = gsap.timeline({
+		delay: -0.3,
+	});
 	whySplitArray.forEach((el) => {
-		whyTl.fromTo(
+		itemTitleTl.fromTo(
 			el,
 			{
 				opacity: 0,
 			},
 			{
 				opacity: 1,
-				duration: 1 / whySplitArray.length,
+				duration: 0.7 / whySplitArray.length,
 			}
 		);
 	});
+	whyTl.add(itemTitleTl);
 
 	// третий блок текста
 	whyTl.fromTo(
@@ -171,13 +181,17 @@ if (document.querySelector(".why") !== null) {
 		{
 			width: 0,
 		},
-		{ width: "100%", duration: 0.5 }
+		{ width: "100%", duration: 0.5 },
+		"-=0.4"
 	);
 	whySplitArray = Array.from(
 		splitText(document.querySelector(".why__item-3 .why__subtitle")).querySelectorAll(".letter")
 	);
+	itemTitleTl = gsap.timeline({
+		delay: -0.3,
+	});
 	whySplitArray.forEach((el) => {
-		whyTl.fromTo(
+		itemTitleTl.fromTo(
 			el,
 			{
 				opacity: 0,
@@ -188,11 +202,15 @@ if (document.querySelector(".why") !== null) {
 			}
 		);
 	});
+	whyTl.add(itemTitleTl);
 	whySplitArray = Array.from(
 		splitText(document.querySelector(".why__item-3 .why__text")).querySelectorAll(".letter")
 	);
+	itemTitleTl = gsap.timeline({
+		delay: -0.5,
+	});
 	whySplitArray.forEach((el) => {
-		whyTl.fromTo(
+		itemTitleTl.fromTo(
 			el,
 			{
 				opacity: 0,
@@ -203,6 +221,7 @@ if (document.querySelector(".why") !== null) {
 			}
 		);
 	});
+	whyTl.add(itemTitleTl);
 }
 
 // секция cool
@@ -210,7 +229,7 @@ if (document.querySelector(".cool") !== null) {
 	const coolTl = gsap.timeline({
 		scrollTrigger: {
 			trigger: ".cool",
-			start: "30% center",
+			start: "top 80%",
 			toggleActions: "play pause resume play",
 		},
 	});
@@ -222,12 +241,11 @@ if (document.querySelector(".cool") !== null) {
 		{ width: "100%", duration: 0.5 }
 	);
 	coolTl.fromTo(
-		".cool__container-image",
+		".cool__container-left-overlay",
 		{
-			y: 50,
-			opacity: 0,
+			height: "100%",
 		},
-		{ y: 0, opacity: 1, duration: 1 }
+		{ height: 0, duration: 0.5 }
 	);
 	coolTl.fromTo(
 		".cool__container-left .line-horizontal-bottom",
@@ -324,7 +342,7 @@ if (document.querySelector(".cases") !== null) {
 			},
 			{
 				opacity: 1,
-				duration: 1 / casesSplitArray.length,
+				duration: 0.6 / casesSplitArray.length,
 			}
 		);
 	});
@@ -346,7 +364,7 @@ if (document.querySelector(".cases") !== null) {
 		let caseTl = gsap.timeline();
 		ScrollTrigger.create({
 			trigger: elem,
-			start: "-15% 50%",
+			start: "top 80%",
 			toggleActions: "play pause resume none",
 			animation: caseTl
 				.from(casesImages[idx], {
@@ -385,7 +403,7 @@ if (document.querySelector(".cases") !== null) {
 							casesSplitArray.forEach((el) => {
 								caseTl.to(el, {
 									opacity: 1,
-									duration: 1 / casesSplitArray.length,
+									duration: 0.6 / casesSplitArray.length,
 								});
 							});
 						},
@@ -488,4 +506,174 @@ if (document.querySelector(".steps") !== null) {
 			),
 		});
 	});
+}
+
+// секция FAQ
+if (document.querySelector(".faq") !== null) {
+	const faqTl = gsap.timeline({
+		scrollTrigger: {
+			trigger: ".faq",
+			start: "top 80%",
+			toggleActions: "play pause resume play",
+		},
+	});
+
+	let faqSplitArray = Array.from(splitText(document.querySelector(".faq__title-main")).querySelectorAll(".letter"));
+	faqSplitArray.forEach((el) => {
+		faqTl.fromTo(
+			el,
+			{
+				opacity: 0,
+			},
+			{
+				opacity: 1,
+				duration: 1 / faqSplitArray.length,
+			}
+		);
+	});
+	const faqAccordions = Array.from(document.querySelectorAll(".faq__accordion"));
+	const faqTitle = Array.from(document.querySelectorAll(".faq__title-inner"));
+	const faqNumber = Array.from(document.querySelectorAll(".faq__title-number"));
+	const faqDot = Array.from(document.querySelectorAll(".faq__icon"));
+	const faqHorizontalLinesBottom = Array.from(document.querySelectorAll(".faq__accordion .line-horizontal-bottom"));
+	const faqTitleArrays = [];
+	faqTitle.forEach((elem) => {
+		faqTitleArrays.push(Array.from(splitText(elem).querySelectorAll(".letter")));
+	});
+	faqAccordions.forEach((elem, idx) => {
+		let accrodionTl = gsap.timeline();
+		accrodionTl.fromTo(
+			faqNumber[idx],
+			{ opacity: 0 },
+			{
+				opacity: 1,
+				duration: 0.5,
+			}
+		);
+		accrodionTl.fromTo(
+			faqDot[idx],
+			{ opacity: 0 },
+			{
+				opacity: 1,
+				duration: 0.5,
+			},
+			"-=0.5"
+		);
+		let faqTitleArray = faqTitleArrays[idx];
+		let titleTl = gsap.timeline({});
+		faqTitleArray.forEach((el) => {
+			titleTl.fromTo(
+				el,
+				{ opacity: 0 },
+				{
+					opacity: 1,
+					duration: 1 / faqTitleArray.length,
+				}
+			);
+		});
+		accrodionTl.add(titleTl);
+		ScrollTrigger.create({
+			trigger: elem,
+			start: "top 90%",
+			toggleActions: "play pause resume none",
+			animation: accrodionTl.fromTo(
+				faqHorizontalLinesBottom[idx],
+				{
+					width: 0,
+				},
+				{
+					width: "100%",
+					duration: 1,
+				}
+			),
+		});
+	});
+}
+
+// секция feedback
+if (document.querySelector(".feedback") !== null) {
+	const feedbackTl = gsap.timeline({
+		scrollTrigger: {
+			trigger: ".feedback",
+			start: "top 80%",
+			toggleActions: "play pause resume play",
+		},
+	});
+	const firstTopLine = document.querySelector(".feedback__side-left .line-horizontal-top");
+	const secondTopLine = document.querySelector(".feedback__side-right .line-horizontal-top");
+	const rightLine = document.querySelector(".feedback__side-left .line-vertical-right");
+	const feedbackForm = document.querySelector(".feedback__form");
+	feedbackTl.fromTo(
+		firstTopLine,
+		{
+			width: 0,
+		},
+		{
+			width: "100%",
+			duration: 0.5,
+		}
+	);
+	feedbackTl.fromTo(
+		rightLine,
+		{
+			height: 0,
+		},
+		{
+			height: "100%",
+			duration: 0.5,
+		},
+		"-=0.5"
+	);
+	let feedbackSplitArray = Array.from(
+		splitText(document.querySelector(".feedback__title")).querySelectorAll(".letter")
+	);
+	feedbackSplitArray.forEach((el) => {
+		feedbackTl.fromTo(
+			el,
+			{
+				opacity: 0,
+			},
+			{
+				opacity: 1,
+				duration: 1 / feedbackSplitArray.length,
+			}
+		);
+	});
+	feedbackTl.fromTo(
+		secondTopLine,
+		{
+			width: 0,
+		},
+		{
+			width: "100%",
+			duration: 0.5,
+		},
+		"-=0.5"
+	);
+	feedbackSplitArray = Array.from(
+		splitText(document.querySelector(".feedback__subtitle")).querySelectorAll(".letter")
+	);
+	feedbackSplitArray.forEach((el) => {
+		feedbackTl.fromTo(
+			el,
+			{
+				opacity: 0,
+			},
+			{
+				opacity: 1,
+				duration: 1 / feedbackSplitArray.length,
+			}
+		);
+	});
+	feedbackTl.fromTo(
+		feedbackForm,
+		{
+			opacity: 0,
+		},
+		{
+			opacity: 1,
+			duration: 1,
+		},
+		"-=1"
+	);
 }

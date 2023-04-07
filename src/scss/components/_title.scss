@@ -7,6 +7,7 @@
 		color: var(--black-color);
 		margin: 0;
 		text-transform: uppercase;
+		transition: color 0.3s ease;
 	}
 	&__h1 {
 		font-family: "Mulish", sans-serif;
@@ -15,6 +16,7 @@
 		line-height: 70px;
 		color: var(--black-color);
 		margin: 0;
+		transition: color 0.3s ease;
 	}
 	&__h2 {
 		font-family: "Mulish", sans-serif;
@@ -31,6 +33,7 @@
 		line-height: 32px;
 		color: var(--black-color);
 		margin: 0;
+		transition: color 0.3s ease;
 	}
 	&__h4 {
 		font-family: "Mulish", sans-serif;
@@ -39,6 +42,7 @@
 		line-height: 26px;
 		color: var(--black-color);
 		margin: 0;
+		transition: color 0.3s ease;
 	}
 	&__h5 {
 		font-family: "Mulish", sans-serif;
@@ -47,6 +51,7 @@
 		line-height: 24px;
 		color: var(--black-color);
 		margin: 0;
+		transition: color 0.3s ease;
 	}
 	&__h6 {
 		font-family: "Mulish", sans-serif;
@@ -55,6 +60,7 @@
 		line-height: 22px;
 		color: var(--black-color);
 		margin: 0;
+		transition: color 0.3s ease;
 		&-grey {
 			color: var(--1-grey-color);
 		}

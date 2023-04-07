@@ -1,7 +1,4 @@
 const accordionfaq = document.querySelectorAll(".faq__accordion");
-setTimeout(() => {
-	accordionfaq[0].click();
-}, 0);
 let prevElem = null;
 accordionfaq.forEach((el) => {
 	el.addEventListener("click", (e) => {

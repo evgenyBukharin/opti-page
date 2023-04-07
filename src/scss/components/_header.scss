@@ -1,5 +1,6 @@
 .header {
-	position: relative;
+	position: fixed;
+	width: 100%;
 	z-index: 100;
 	background: var(--white-color);
 	&__container {
@@ -18,6 +19,31 @@
 			display: flex;
 			justify-content: center;
 			align-items: center;
+			&::after {
+				content: "";
+				position: absolute;
+				inset: -16px;
+				top: 0;
+				bottom: 0;
+				background: var(--black-color);
+				z-index: 3;
+				opacity: 0;
+				transition: opacity 0.3s ease;
+			}
+			&:last-of-type {
+				&::after {
+					right: 0;
+				}
+			}
+			&:hover {
+				&::after {
+					opacity: 1;
+				}
+				& .title__h6 {
+					z-index: 5;
+					color: var(--white-color);
+				}
+			}
 		}
 		&-burger {
 			position: relative;
@@ -37,8 +63,6 @@
 	}
 	&__picture {
 		width: fit-content;
-	}
-	&__logo {
 	}
 	& .line-horizontal-bottom-hidden {
 		display: none;
@@ -67,6 +91,10 @@
 			}
 			&-title {
 				grid-column: 3 span;
+				&::after {
+					right: -8px;
+					left: -8px;
+				}
 			}
 		}
 	}
@@ -83,6 +111,11 @@
 				grid-column: 6 span;
 				padding-top: 8px;
 				padding-bottom: 8px;
+				&:first-of-type {
+					&::after {
+						left: 0;
+					}
+				}
 			}
 		}
 		& .line-horizontal-bottom-hidden {
@@ -98,6 +131,11 @@
 			&-title {
 				grid-column: 8 span;
 				padding: 0;
+				&:last-of-type {
+					&::after {
+						right: -8px;
+					}
+				}
 			}
 			&-burger {
 				display: flex;

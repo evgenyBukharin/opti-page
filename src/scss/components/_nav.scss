@@ -13,8 +13,12 @@
 		}
 	}
 	&__link {
+		transition: color 0.3s ease;
 		&-logo {
 			display: block;
+		}
+		&:hover {
+			color: var(--1-blue-color);
 		}
 	}
 }

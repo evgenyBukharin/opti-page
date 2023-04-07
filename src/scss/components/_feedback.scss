@@ -36,7 +36,7 @@
 		padding-top: 16px;
 		margin-bottom: 16px;
 		text-transform: uppercase;
-		&-blue {
+		& .word:nth-last-child(-n + 3) {
 			color: var(--1-blue-color);
 		}
 	}
