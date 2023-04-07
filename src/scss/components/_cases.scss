@@ -24,7 +24,7 @@
 		display: grid;
 		grid-template-columns: repeat(12, 1fr);
 		margin-bottom: 32px;
-		gap: 32px;
+		gap: 31px;
 	}
 	&__item {
 		pointer-events: none;
@@ -64,7 +64,7 @@
 		&::before {
 			content: "";
 			position: absolute;
-			inset: -16px;
+			inset: -17px;
 			border-radius: 16px;
 			background: var(--black-color);
 			z-index: -1;
@@ -102,7 +102,7 @@
 @media (max-width: 1024px) {
 	.cases {
 		&__list {
-			gap: 24px;
+			gap: 23px;
 		}
 		&__item {
 			grid-column: 4 span;
@@ -130,7 +130,7 @@
 				}
 			}
 			&::before {
-				inset: -12px;
+				inset: -13px;
 			}
 		}
 		& .line {
@@ -156,7 +156,7 @@
 		margin-top: 60px;
 		padding-bottom: 60px;
 		&__list {
-			gap: 16px;
+			gap: 23px;
 		}
 		&__item {
 			grid-column: 6 span;
@@ -185,21 +185,21 @@
 				}
 			}
 			&::before {
-				inset: -8px;
+				inset: -13px;
 			}
 		}
 		& .line {
 			&-vertical {
 				&-right {
-					right: -8px;
+					right: -11px;
 				}
 			}
 			&-horizontal {
 				&-top {
-					top: -8px;
+					top: -11px;
 				}
 				&-bottom {
-					bottom: -8px;
+					bottom: -11px;
 				}
 			}
 		}
@@ -217,15 +217,25 @@
 		}
 		&__list {
 			column-gap: 0;
-			row-gap: 48px;
+			row-gap: 47px;
 		}
 		&__item {
 			grid-column: 12 span;
-
+			// new styles
+			&:nth-child(-n + 1) {
+				& .line-horizontal-top {
+					display: block !important;
+				}
+			}
+			&:nth-child(1n) {
+				& .line-vertical-right {
+					display: none;
+				}
+			}
 			//old styles
 			&:nth-child(-n + 2) {
 				& .line-horizontal-top {
-					display: block;
+					display: none;
 				}
 			}
 			&:nth-child(2n) {
@@ -234,20 +244,8 @@
 				}
 			}
 
-			// new styles
-			&:nth-child(-n + 1) {
-				& .line-horizontal-top {
-					display: block;
-				}
-			}
-			&:nth-child(1n) {
-				& .line-vertical-right {
-					display: none;
-				}
-			}
-
 			&::before {
-				inset: -8px;
+				inset: -13px;
 			}
 		}
 		& .line {
