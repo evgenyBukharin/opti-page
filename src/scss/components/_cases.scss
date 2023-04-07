@@ -52,8 +52,13 @@
 				opacity: 1;
 				visibility: visible;
 			}
-			& .cases__tag {
-				border: 1px solid var(--white-color);
+			& .cases {
+				&__tag {
+					border: 1px solid var(--white-color);
+				}
+				&__time {
+					color: var(--white-color);
+				}
 			}
 		}
 		&::before {
@@ -87,7 +92,7 @@
 	}
 	&__time {
 		transition: color 0.5s ease;
-		color: inherit;
+		color: var(--2-grey-color);
 	}
 	&__button {
 		width: 100%;

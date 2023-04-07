@@ -406,33 +406,34 @@ if (document.querySelector(".cases") !== null) {
 									duration: 0.6 / casesSplitArray.length,
 								});
 							});
+							caseTl
+								.fromTo(
+									casesTime[idx],
+									{
+										opacity: 0,
+									},
+									{
+										opacity: 1,
+										duration: 0.3,
+									}
+								)
+								.fromTo(
+									casesTags[idx],
+									{
+										opacity: 0,
+									},
+									{
+										opacity: 1,
+										duration: 0.3,
+									}
+								)
+								.to(elem, { pointerEvents: "all" });
 						},
 					},
 					{
 						width: "100%",
 					}
-				)
-				.fromTo(
-					casesTime[idx],
-					{
-						opacity: 0,
-					},
-					{
-						opacity: 1,
-						duration: 0.3,
-					}
-				)
-				.fromTo(
-					casesTags[idx],
-					{
-						opacity: 0,
-					},
-					{
-						opacity: 1,
-						duration: 0.3,
-					}
-				)
-				.to(elem, { pointerEvents: "all" }),
+				),
 		});
 	});
 }
