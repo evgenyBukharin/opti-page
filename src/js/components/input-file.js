@@ -29,8 +29,8 @@ fileInputContainers.forEach((container) => {
 											loading="lazy"
 											src="./img/close.svg"
 											class="image ${sectionClass}__icon-close"
-											width="12"
-											height="12"
+											width="24"
+											height="24"
 											alt="Иконка закрыть"
 										/>
 									</span>
