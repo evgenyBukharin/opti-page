@@ -7,7 +7,7 @@ function splitText(el) {
 	el.innerHTML = el.innerText.replace(/(\S*)/g, (m) => {
 		return (
 			`<div style="display: inline-block" class="word">` +
-			m.replace(/(-|#|@)?\S(-|#|@)?/g, "<div style='display: inline-block' class='letter'>$&</div>") +
+			m.replace(/(#|@)?\S(#|@)?/g, "<div style='display: inline-block' class='letter'>$&</div>") +
 			`</div>`
 		);
 	});
@@ -16,6 +16,12 @@ function splitText(el) {
 		if (word.innerHTML == "") {
 			word.remove();
 		}
+		const letters = word.querySelectorAll(".letter");
+		letters.forEach((letter) => {
+			if (letter.innerHTML == "-" && word.offsetHeight > 50) {
+				letter.insertAdjacentHTML("afterend", "<br>");
+			}
+		});
 	});
 	return el;
 }
