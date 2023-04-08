@@ -33,6 +33,7 @@
 		height: 100%;
 		&-doc {
 			display: flex;
+			align-items: flex-start;
 			column-gap: 8px;
 		}
 		&-text {
@@ -47,6 +48,13 @@
 			width: 100%;
 			height: 24px;
 			display: flex;
+		}
+	}
+	&__icon {
+		&-close {
+			min-width: 24px;
+			min-height: 24px;
+			margin-left: 8px;
 		}
 	}
 	&__list {

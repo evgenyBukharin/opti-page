@@ -2,6 +2,8 @@ import { gsap } from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
+const mediaQuery768 = window.matchMedia("(max-width: 768px)");
+
 // функция разделения текста на буквы и слова
 function splitText(el) {
 	el.innerHTML = el.innerText.replace(/(\S*)/g, (m) => {
@@ -18,7 +20,7 @@ function splitText(el) {
 		}
 		const letters = word.querySelectorAll(".letter");
 		letters.forEach((letter) => {
-			if (letter.innerHTML == "-" && word.offsetHeight > 50) {
+			if (letter.innerHTML == "-" && word.offsetHeight > 50 && mediaQuery768.matches) {
 				letter.insertAdjacentHTML("afterend", "<br>");
 			}
 		});
