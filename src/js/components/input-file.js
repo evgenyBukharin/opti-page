@@ -20,7 +20,7 @@ fileInputContainers.forEach((container) => {
 											alt="Иконка документ"
 										/>
 										<div class="${sectionClass}__container-text">
-											<span class="title__h6">${fileInput.files.item(i).name}</span>
+											<span class="title__h6 feedback__title-filename">${fileInput.files.item(i).name}</span>
 											<span class="title__h6 title__h6-grey">${bytesToSize(fileInput.files.item(i).size)}</span>
 										</div>
 									</div>

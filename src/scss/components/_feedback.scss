@@ -8,6 +8,7 @@
 		gap: 32px;
 		&-doc {
 			display: flex;
+			align-items: flex-start;
 			column-gap: 8px;
 		}
 		&-text {
@@ -36,8 +37,18 @@
 		padding-top: 16px;
 		margin-bottom: 16px;
 		text-transform: uppercase;
+		&-filename {
+			word-break: break-all;
+		}
 		& .word:nth-last-child(-n + 3) {
 			color: var(--1-blue-color);
+		}
+	}
+	&__icon {
+		&-close {
+			min-width: 24px;
+			min-height: 24px;
+			margin-left: 8px;
 		}
 	}
 	&__input {
