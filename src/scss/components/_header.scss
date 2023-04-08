@@ -8,6 +8,8 @@
 		grid-template-columns: repeat(12, 1fr);
 		column-gap: 32px;
 		border-bottom: 1px solid var(--black-color);
+		padding-left: 8px;
+		padding-right: 8px;
 		&-logo {
 			position: relative;
 			box-sizing: content-box;
