@@ -406,43 +406,41 @@ if (document.querySelector(".cases") !== null) {
 					{
 						width: 0,
 						duration: 0.3,
-						onComplete: function () {
-							let casesSplitArray = casesTitleArticleArray[idx];
-							casesSplitArray.forEach((el) => {
-								caseTl.to(el, {
-									opacity: 1,
-									duration: 0.6 / casesSplitArray.length,
-								});
-							});
-							caseTl
-								.fromTo(
-									casesTime[idx],
-									{
-										opacity: 0,
-									},
-									{
-										opacity: 1,
-										duration: 0.3,
-									}
-								)
-								.fromTo(
-									casesTags[idx],
-									{
-										opacity: 0,
-									},
-									{
-										opacity: 1,
-										duration: 0.3,
-									}
-								)
-								.to(elem, { pointerEvents: "all" });
-						},
 					},
 					{
 						width: "100%",
 					}
 				),
 		});
+		let casesSplitArray = casesTitleArticleArray[idx];
+		casesSplitArray.forEach((el) => {
+			caseTl.to(el, {
+				opacity: 1,
+				duration: 0.6 / casesSplitArray.length,
+			});
+		});
+		caseTl
+			.fromTo(
+				casesTime[idx],
+				{
+					opacity: 0,
+				},
+				{
+					opacity: 1,
+					duration: 0.3,
+				}
+			)
+			.fromTo(
+				casesTags[idx],
+				{
+					opacity: 0,
+				},
+				{
+					opacity: 1,
+					duration: 0.3,
+				}
+			)
+			.to(elem, { pointerEvents: "all" });
 	});
 }
 

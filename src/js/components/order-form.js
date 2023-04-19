@@ -5,28 +5,24 @@ const orderOverlay = document.querySelector(".order__overlay");
 const backBtn = document.getElementById("backOrderForm");
 const openBtn = document.getElementById("openOrderForm");
 const closeBtn = document.getElementById("closeOrderForm");
-const header = document.querySelector(".header");
+const coolButton = document.getElementById("coolButton");
 
-import { disableScroll } from "../functions/disable-scroll";
-import { enableScroll } from "../functions/enable-scroll";
-
-function headerScrollEnable() {}
-
-function headerScrollDisable() {}
+if (coolButton !== null) {
+	coolButton.addEventListener("click", () => {
+		orderSection.classList.toggle("order-active");
+	});
+}
 
 if (openBtn !== null) {
 	openBtn.addEventListener("click", () => {
 		orderSection.classList.toggle("order-active");
-		disableScroll();
-		headerScrollEnable();
 	});
 }
 
 if (closeBtn !== null) {
 	closeBtn.addEventListener("click", () => {
 		orderSection.classList.toggle("order-active");
-		enableScroll();
-		headerScrollDisable();
+		orderOverlay.classList.remove("order__overlay-active");
 	});
 }
 
@@ -34,8 +30,6 @@ if (orderSection !== null) {
 	orderSection.addEventListener("click", () => {
 		orderSection.classList.toggle("order-active");
 		orderOverlay.classList.remove("order__overlay-active");
-		enableScroll();
-		headerScrollDisable();
 	});
 }
 
@@ -48,12 +42,12 @@ if (orderContainer !== null) {
 if (orderForm !== null) {
 	orderForm.addEventListener("submit", (event) => {
 		event.preventDefault();
-		orderOverlay.classList.toggle("order__overlay-active");
+		orderOverlay.classList.add("order__overlay-active");
 	});
 }
 
 if (backBtn !== null) {
 	backBtn.addEventListener("click", () => {
-		orderOverlay.classList.toggle("order__overlay-active");
+		orderOverlay.classList.remove("order__overlay-active");
 	});
 }

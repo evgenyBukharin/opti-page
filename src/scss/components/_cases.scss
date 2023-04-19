@@ -12,7 +12,7 @@
 		overflow: hidden;
 		&-article {
 			margin-top: 8px;
-			color: inherit;
+			color: var(--black-color);
 			transition: color 0.5s ease;
 			overflow: hidden;
 			& .letter {
@@ -59,6 +59,11 @@
 				&__time {
 					color: var(--white-color);
 				}
+				&__title {
+					&-article {
+						color: var(--white-color);
+					}
+				}
 			}
 		}
 		&::before {
@@ -82,9 +87,9 @@
 		gap: 8px;
 	}
 	&__tag {
-		padding: 4px 20px;
+		padding: 4px 12px;
 		font-weight: 400;
-		font-size: 16px;
+		font-size: 14px;
 		line-height: 24px;
 		border: 1px solid var(--black-color);
 		border-radius: 30px;

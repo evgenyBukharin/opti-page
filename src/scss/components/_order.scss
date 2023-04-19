@@ -7,13 +7,13 @@
 	backdrop-filter: blur(5px);
 	display: grid;
 	grid-template-columns: repeat(12, 1fr);
-	gap: 40px;
+	gap: 32px;
 	align-content: flex-start;
 	opacity: 0;
 	visibility: hidden;
 	transition: opacity 0.4s ease, visibility 0.4s ease;
-	padding-left: 40px;
-	padding-right: 40px;
+	// padding-left: 40px;
+	// padding-right: 40px;
 	cursor: pointer;
 	&-active {
 		opacity: 1;
@@ -22,7 +22,7 @@
 	&__container {
 		margin-top: 83px;
 		cursor: default;
-		grid-column: 4 / 10;
+		grid-column: 4 / 9;
 		display: grid;
 		grid-template-columns: repeat(6, 1fr);
 		gap: 32px;
@@ -211,6 +211,16 @@
 		}
 		&-ok {
 			margin-bottom: 24px;
+		}
+	}
+}
+
+@media (max-width: 1440px) {
+	.order {
+		&__container {
+			&__container {
+				grid-column: 4 / 9;
+			}
 		}
 	}
 }
