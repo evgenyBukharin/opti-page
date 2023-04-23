@@ -86,6 +86,9 @@ a {
 	margin: 0 auto;
 	padding: 0 var(--container-offset);
 	max-width: var(--container-width);
+	&-1c {
+		max-width: 1140px;
+	}
 }
 
 .js-focus-visible :focus:not(.focus-visible) {
@@ -112,5 +115,11 @@ a {
 	.container {
 		padding-left: 16px;
 		padding-right: 16px;
+	}
+}
+
+.main {
+	&-1c {
+		padding-top: 138px;
 	}
 }
