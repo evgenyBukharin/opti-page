@@ -8,3 +8,4 @@ import "./components/input-file";
 import "./components/order-form";
 import "./components/burger";
 import "./components/placeholders";
+import "./components/1cAnim";

@@ -1,13 +1,12 @@
 .hero-1c {
-	padding-bottom: 138px;
 	height: 100vh;
 	display: flex;
-	align-items: center;
+	padding-top: 138px;
 	&__container {
 		display: grid;
 		grid-template-columns: repeat(12, 1fr);
 		gap: 33px;
-		align-items: center;
+		padding-top: 100px;
 		&-left {
 			grid-column: 7 span;
 		}
@@ -15,7 +14,6 @@
 			grid-column: 5 span;
 			padding-left: 40px;
 			padding-right: 40px;
-			height: 100%;
 		}
 		&-inner {
 			display: flex;
@@ -24,6 +22,7 @@
 		}
 	}
 	&__title {
+		margin-top: 28px;
 		color: var(--3-blue-color);
 		font-size: 41px;
 		letter-spacing: 2px;
@@ -63,6 +62,6 @@
 	}
 	&__form {
 		box-shadow: 0 0 70px 3px rgba(0, 0, 0, 0.5);
-		height: 100%;
+		min-height: 400px;
 	}
 }
