@@ -44,25 +44,11 @@ if (orderContainer !== null) {
 if (orderForm !== null) {
 	orderForm.addEventListener("submit", (event) => {
 		event.preventDefault();
-		orderOverlay.classList.add("order__overlay-active");
-	});
-}
-
-if (backBtn !== null) {
-	backBtn.addEventListener("click", () => {
-		orderSection.classList.remove("order-active");
 	});
 }
 
 if (feedbackForm !== null) {
 	feedbackForm.addEventListener("submit", (event) => {
 		event.preventDefault();
-	});
-}
-
-if (feedbackButton !== null) {
-	feedbackButton.addEventListener("click", () => {
-		orderSection.classList.add("order-active");
-		orderOverlay.classList.add("order__overlay-active");
 	});
 }

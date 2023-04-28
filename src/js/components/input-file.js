@@ -5,6 +5,7 @@ fileInputContainers.forEach((container) => {
 	const fileInput = container.querySelector(`.${sectionClass}__input-file`);
 	let filesList = container.querySelector(`.${sectionClass}__list-file`);
 	fileInput.addEventListener("change", () => {
+		// очистка списка файлов нужна/нет?
 		filesList.innerHTML = "";
 		for (let i = 0; i < fileInput.files.length; i++) {
 			let newFileBlock = `<div class="${sectionClass}__item-file">
