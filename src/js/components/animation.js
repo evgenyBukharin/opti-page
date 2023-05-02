@@ -19,6 +19,12 @@ function splitText(el) {
 			word.remove();
 		}
 		const letters = word.querySelectorAll(".letter");
+		if (word.innerText == "1") {
+			word.classList.add("text-blue");
+		}
+		if (word.innerText == "1" && word.nextElementSibling.nextElementSibling.textContent == "В") {
+			word.nextElementSibling.nextElementSibling.classList.add("text-blue");
+		}
 		letters.forEach((letter) => {
 			if (letter.innerHTML == "-" && word.offsetHeight > 50 && mediaQuery768.matches) {
 				letter.insertAdjacentHTML("afterend", "<br>");
@@ -53,8 +59,11 @@ if (document.querySelector(".hero") !== null) {
 			}
 		);
 	});
-	heroTl.fromTo(".hero__text", { opacity: 0 }, { opacity: 1, duration: 0.5 }, "-=0.5");
-	heroTl.fromTo(".hero__button", { opacity: 0 }, { opacity: 1, duration: 0.5 }, "-=0.3");
+	const heroItems = document.querySelectorAll(".hero__item");
+	heroItems.forEach((item) => {
+		heroTl.fromTo(item, { opacity: 0 }, { opacity: 1, duration: 0.2 });
+	});
+	heroTl.fromTo(".hero__button", { opacity: 0, x: 40 }, { opacity: 1, x: 0, duration: 0.4 });
 }
 
 // таймлайн второй секции
@@ -62,7 +71,7 @@ if (document.querySelector(".why") !== null) {
 	const whyTl = gsap.timeline({
 		scrollTrigger: {
 			trigger: ".why",
-			start: "-40% center",
+			start: "-40% 70%",
 			toggleActions: "play pause resume play",
 		},
 	});
@@ -309,7 +318,7 @@ if (document.querySelector(".cool") !== null) {
 		}
 	);
 	const coolItems = document.querySelectorAll(".cool__item");
-	coolItems.forEach((item, idx) => {
+	coolItems.forEach((item) => {
 		let tempTl = gsap.timeline({
 			delay: -1,
 		});

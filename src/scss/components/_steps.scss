@@ -18,27 +18,26 @@
 		padding: 24px 0;
 		&:hover {
 			& .steps__title {
-				-webkit-text-stroke-color: var(--black-color);
+				color: var(--black-color);
 			}
 		}
 		&-open {
 			& .steps__content {
 				opacity: 1;
 				padding-top: 8px;
+				&-text {
+					color: var(--1-blue-color) !important;
+				}
 			}
 			& .steps__title {
-				transition: color 0.5s ease, -webkit-text-stroke-color 0.6s ease;
-				-webkit-text-stroke-color: transparent !important;
-				color: var(--black-color);
+				color: var(--1-blue-color) !important;
 			}
 		}
 	}
 	&__title {
 		position: relative;
 		transition: color 0.5s ease;
-		-webkit-text-stroke-width: 1px;
-		-webkit-text-stroke-color: var(--1-grey-color);
-		color: transparent;
+		color: var(--1-grey-color);
 		counter-increment: numbers;
 		width: 100%;
 		padding-right: 80px;

@@ -5,7 +5,6 @@
 		position: relative;
 		padding-top: 121px;
 		padding-bottom: 150px;
-
 		opacity: 0;
 		&::after {
 			content: "";
@@ -17,15 +16,32 @@
 			left: 0;
 		}
 	}
+	&__list {
+		display: flex;
+		flex-direction: column;
+		row-gap: 6px;
+		margin-bottom: 24px;
+	}
+	&__item {
+		font-size: 18px;
+		background: var(--white-color);
+		width: fit-content;
+		padding-top: 3px;
+		padding-bottom: 3px;
+		&::before {
+			content: "-";
+			margin-right: 4px;
+		}
+	}
 	&__title {
-		margin-bottom: 21px;
+		margin-bottom: 28px;
 		overflow: hidden;
 		max-width: 1090px;
 		opacity: 0;
 	}
-	&__text {
-		margin-bottom: 24px;
-		max-width: 548px;
+	&__button {
+		padding-right: 32px;
+		padding-left: 32px;
 	}
 }
 

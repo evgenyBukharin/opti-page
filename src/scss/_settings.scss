@@ -118,10 +118,41 @@ a {
 	}
 }
 
-.main {
-	&-1c {
-		& section {
-			padding-top: 138px;
+.text-blue {
+	color: var(--1-blue-color);
+	font-weight: 700;
+}
+
+@media (max-width: 768px) {
+	.main-allcases {
+		margin-top: 90px;
+	}
+}
+
+@media (max-width: 616px) {
+	.main-allcases {
+		margin-top: 170px;
+	}
+}
+
+@media (max-width: 540px) {
+	.main-allcases {
+		margin-top: 170px;
+		& .cases__title {
+			font-size: 50px;
+			line-height: 50px;
 		}
+	}
+}
+
+@media (max-width: 480px) {
+	.main-allcases {
+		margin-top: 130px;
+	}
+}
+
+@media (max-width: 375px) {
+	.main-allcases {
+		margin-top: 90px;
 	}
 }

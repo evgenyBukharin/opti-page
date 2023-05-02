@@ -24,7 +24,9 @@ const webpackStream = require("webpack-stream");
 const plumber = require("gulp-plumber");
 const path = require("path");
 const zip = require("gulp-zip");
+const { webpack } = require("webpack");
 const rootFolder = path.basename(path.resolve());
+const TerserPlugin = require("terser-webpack-plugin");
 
 // paths
 const srcFolder = "./src";
@@ -151,6 +153,15 @@ const scripts = () => {
 		.pipe(
 			webpackStream({
 				mode: isProd ? "production" : "development",
+				optimization: {
+					minimize: false,
+					minimizer: [
+						new TerserPlugin({
+							minify: TerserPlugin.uglifyJsMinify,
+							terserOptions: {},
+						}),
+					],
+				},
 				output: {
 					filename: "main.js",
 				},
