@@ -693,3 +693,46 @@ if (document.querySelector(".feedback") !== null) {
 		"-=1"
 	);
 }
+
+// policy section
+const policySection = document.querySelector(".policy");
+const policyButtons = document.querySelectorAll(".button__policy");
+const policyClose = document.querySelector(".policy__button-close");
+const polictyContainer = document.querySelector(".policy__container");
+if (policySection !== null && policyButtons !== null) {
+	const policyTl = gsap.timeline();
+	policyTl.pause();
+	policyTl.to(".policy", { opacity: 1, visibility: "visible", duration: 0.2 }).fromTo(
+		".policy__container",
+		{
+			opacity: 0,
+			y: -125,
+			visibility: "hidden",
+		},
+		{
+			opacity: 1,
+			y: -75,
+			visibility: "visible",
+			duration: 0.3,
+		}
+	);
+
+	policyButtons.forEach((btn) => {
+		btn.addEventListener("click", () => {
+			policyTl.play();
+		});
+	});
+
+	policyClose.addEventListener("click", (e) => {
+		e.stopPropagation();
+		policyTl.reverse();
+	});
+
+	policySection.addEventListener("click", () => {
+		policyTl.reverse();
+	});
+
+	polictyContainer.addEventListener("click", (e) => {
+		e.stopPropagation();
+	});
+}

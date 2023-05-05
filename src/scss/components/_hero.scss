@@ -19,15 +19,12 @@
 	&__list {
 		display: flex;
 		flex-direction: column;
-		row-gap: 6px;
+		row-gap: 12px;
 		margin-bottom: 24px;
 	}
 	&__item {
 		font-size: 18px;
-		background: var(--white-color);
 		width: fit-content;
-		padding-top: 3px;
-		padding-bottom: 3px;
 		&::before {
 			content: "-";
 			margin-right: 4px;
