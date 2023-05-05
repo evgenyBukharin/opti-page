@@ -698,12 +698,12 @@ if (document.querySelector(".feedback") !== null) {
 const policySection = document.querySelector(".policy");
 const policyButtons = document.querySelectorAll(".button__policy");
 const policyClose = document.querySelector(".policy__button-close");
-const polictyContainer = document.querySelector(".policy__container");
+const policyContainer = document.querySelector(".policy__container");
 if (policySection !== null && policyButtons !== null) {
 	const policyTl = gsap.timeline();
 	policyTl.pause();
-	policyTl.to(".policy", { opacity: 1, visibility: "visible", duration: 0.2 }).fromTo(
-		".policy__container",
+	policyTl.to(policySection, { opacity: 1, visibility: "visible", duration: 0.2 }).fromTo(
+		policyContainer,
 		{
 			opacity: 0,
 			y: -125,
@@ -732,7 +732,50 @@ if (policySection !== null && policyButtons !== null) {
 		policyTl.reverse();
 	});
 
-	polictyContainer.addEventListener("click", (e) => {
+	policyContainer.addEventListener("click", (e) => {
+		e.stopPropagation();
+	});
+}
+
+// mobile menu
+const menuSection = document.querySelector(".menu");
+const menuContainer = document.querySelector(".menu__container");
+const menuClose = document.querySelector(".menu__button-close");
+const burger = document.querySelector(".burger");
+if (burger !== null && menuSection !== null) {
+	const menuTl = gsap.timeline();
+	menuTl.pause();
+	menuTl.to(menuSection, { opacity: 1, visibility: "visible", duration: 0.2 }).fromTo(
+		menuContainer,
+		{
+			opacity: 0,
+			y: 50,
+			visibility: "hidden",
+		},
+		{
+			opacity: 1,
+			y: 0,
+			visibility: "visible",
+			duration: 0.3,
+		}
+	);
+	burger.addEventListener("click", () => {
+		menuTl.play();
+		burger.classList.toggle("burger-active");
+	});
+
+	menuClose.addEventListener("click", (e) => {
+		e.stopPropagation();
+		menuTl.reverse();
+		burger.classList.toggle("burger-active");
+	});
+
+	menuSection.addEventListener("click", () => {
+		menuTl.reverse();
+		burger.classList.toggle("burger-active");
+	});
+
+	menuContainer.addEventListener("click", (e) => {
 		e.stopPropagation();
 	});
 }

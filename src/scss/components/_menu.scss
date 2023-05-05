@@ -1,0 +1,50 @@
+.menu {
+	display: none;
+	position: fixed;
+	inset: 0;
+	z-index: 1000;
+	background: rgba(0, 0, 0, 0.7);
+	backdrop-filter: blur(3px);
+	align-items: flex-end;
+	opacity: 0;
+	visibility: hidden;
+	&__container {
+		position: relative;
+		padding: 40px;
+		width: 100%;
+		height: fit-content;
+		background: var(--white-color);
+	}
+	&__button {
+		&-close {
+			position: absolute;
+			top: 16px;
+			right: 16px;
+		}
+	}
+	& .nav {
+		&__list {
+			flex-direction: column;
+			row-gap: 20px;
+		}
+		&__item {
+			margin-right: 0;
+		}
+		&__link {
+			position: relative;
+			color: var(--black-color);
+			font-size: 18px;
+			line-height: 120%;
+			font-weight: 700;
+			&:hover {
+				color: var(--black-color);
+			}
+		}
+	}
+}
+
+@media (max-width: 375px) {
+	.menu {
+		display: flex;
+	}
+}
