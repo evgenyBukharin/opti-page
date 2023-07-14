@@ -26,7 +26,9 @@ const path = require("path");
 const zip = require("gulp-zip");
 const { webpack } = require("webpack");
 const rootFolder = path.basename(path.resolve());
+
 const TerserPlugin = require("terser-webpack-plugin");
+const ghPages = require("gh-pages");
 
 // paths
 const srcFolder = "./src";
@@ -109,6 +111,7 @@ const styles = () => {
 				isProd,
 				cleanCSS({
 					level: 2,
+					format: "beautify",
 				})
 			)
 		)
@@ -372,3 +375,8 @@ exports.build = series(toProd, clean, htmlInclude, scripts, styles, resources, i
 exports.cache = series(cache, rewrite);
 
 exports.zip = zipFiles;
+
+function deploy(cb) {
+	ghPages.publish(path.join(process.cwd(), "./app"), cb);
+}
+exports.deploy = deploy;
